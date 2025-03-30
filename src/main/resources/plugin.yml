@@ -1,0 +1,13 @@
+name: ${project.artifactId}
+main: ${project.groupId}.Main
+version: ${project.version}
+author: Black_Eyes
+load: POSTWORLD
+api-version: 1.13
+softdepend: [Essentials, EssentialsChat]
+description: >
+             Plugin for blocking swear words
+commands:
+  glide:
+    description: Main Command
+    aliases: infiniteGlide, ig

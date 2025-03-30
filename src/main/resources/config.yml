@@ -1,0 +1,6 @@
+    #Checks for updates at plugin start
+CheckForUpdates: true
+    #Info messages at plugin startup
+ConsoleMessages: true
+    # /!\ changing the permission will break the plugin for players who already have the permission
+Glide_Permission: "glide.infinite"

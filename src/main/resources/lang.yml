@@ -1,0 +1,14 @@
+noPermission: '&6[&bGlide&6] &cYou don''t have permission [Permission]'
+
+PluginReloaded: '&aConfig file and lang were reloaded'
+PlayerNotFound: '&cPlayer [Player] was not found'
+PlayerAlreadyHasPermission: '&cPlayer [Player] already has this permission'
+PlayerDoesNotHavePermission: '&cPlayer [Player] does not have this permission'
+PlayerAddedPermission: '&aPlayer [Player] can now infinitely glide'
+PlayerRemovedPermission: '&aPlayer [Player] can no longer infinitely glide'
+help:
+  - '&a -- Help for Glide plugin --'
+  - '&a(developped by Black_Eyes, idea of Komi Hamada)'
+  - '&a/glide allow <player> - Allow a player to use infinite glide'
+  - '&a/glide deny <player> - Disallow a player to use infinite glide'
+  - '&a/glide reload - Reload the config file and lang'

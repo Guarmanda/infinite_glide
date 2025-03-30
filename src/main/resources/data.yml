@@ -1,0 +1,3 @@
+data:
+  - data: "I use a library created by myself to create plugins, and this lib needs a data file for the plugin to start,"
+  - data2: "but this plugin doesn't store any data. Keep this file please."
