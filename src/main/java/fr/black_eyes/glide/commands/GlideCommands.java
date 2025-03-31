@@ -14,7 +14,6 @@ import fr.black_eyes.simpleJavaPlugin.Files;
 import fr.black_eyes.simpleJavaPlugin.SimpleJavaPlugin;
 import fr.black_eyes.simpleJavaPlugin.Utils;
 import org.bukkit.entity.Player;
-import org.jetbrains.annotations.NotNull;
 
 
 public class GlideCommands implements CommandExecutor, TabCompleter  {
@@ -32,11 +31,11 @@ public class GlideCommands implements CommandExecutor, TabCompleter  {
 
 	 
 	//variables for command completion
-	private static final String[] completions0 = {"allow", "deny", "reload", "list"};
+	private static final String[] completions0 = {"allow", "deny", "reload"};
 		
 	 
 	@Override
-	public boolean onCommand(final @NotNull CommandSender sender, final @NotNull Command cmd, final @NotNull String label, final String[] args) {
+	public boolean onCommand(final CommandSender sender, final Command cmd, final String label, final String[] args) {
 
 			
 			if (args.length > 0 && !hasPerm(sender, args[0])) {
@@ -105,7 +104,7 @@ public class GlideCommands implements CommandExecutor, TabCompleter  {
 	}
 	
 	@Override
-	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String msg, String[] args) {
+	public List<String> onTabComplete(CommandSender sender, Command cmd, String msg, String[] args) {
 		final List<String> completions = new ArrayList<>();
 		if(args.length == 1){
 		    for(String string : completions0){

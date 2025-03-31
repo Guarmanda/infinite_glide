@@ -28,14 +28,15 @@ public class GlideListener implements Listener  {
 	//on fall
 	@EventHandler
 	public void onPlayerFall(PlayerMoveEvent e){
-		if(e.getFrom().getY() - e.getTo().getY() > 0) {
-			// check if block at y-2 is air
-			Location loc = e.getFrom().clone();
-			loc.setY(loc.getY() -1.5);
-			if (loc.getBlock().getType() == Material.AIR && e.getPlayer().hasPermission(Main.getConfigs().Glide_Permission) && !e.getPlayer().isGliding()) {
-				e.getPlayer().setGliding(true);
+		if(!e.getPlayer().isGliding())
+			if(e.getFrom().getY() > e.getTo().getY()) {
+				// check if block at y-2 is air
+				Location loc = e.getFrom().clone();
+				loc.setY(loc.getY() -1.5);
+				if (loc.getBlock().getType() == Material.AIR && e.getPlayer().hasPermission(Main.getConfigs().Glide_Permission) ) {
+					e.getPlayer().setGliding(true);
+				}
 			}
-		}
 
 	}
 

@@ -32,23 +32,34 @@
         </resource>
     </resources>
     <plugins>
-      <!-- any other plugins -->
-      <plugin>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
-        </configuration>
-      </plugin>
+
+        <plugin>
+            <artifactId>maven-shade-plugin</artifactId>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact> <!-- Apply to all dependencies -->
+                                <excludes>
+                                    <exclude>META-INF/*</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                        <relocations>
+                            <relocation>
+                                <pattern>fr.black_eyes.simpleJavaPlugin</pattern>
+                                <shadedPattern>fr.black_eyes.glide.simpleJavaPlugin</shadedPattern>
+                            </relocation>
+                        </relocations>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
     </plugins>
  </build>
   <repositories>
@@ -66,12 +77,12 @@
     </repository>
   </repositories>
   <dependencies>
-    <dependency>
-        <groupId>io.papermc.paper</groupId>
-        <artifactId>paper-api</artifactId>
-        <version>1.18-R0.1-SNAPSHOT</version>
-        <scope>provided</scope>
-    </dependency>
+      <dependency>
+          <groupId>com.destroystokyo.paper</groupId>
+          <artifactId>paper-api</artifactId>
+          <version>1.9.4-R0.1-20160806.222312-1</version>
+          <scope>provided</scope>
+      </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
@@ -81,7 +92,7 @@
 	<dependency>
 	    <groupId>com.github.Guarmanda</groupId>
 	    <artifactId>SimpleJavaPlugin</artifactId>
-	    <version>0.5</version>
+	    <version>0.8</version>
 	</dependency>
   </dependencies>
 </project>
